@@ -6,7 +6,7 @@ var generateBtn = document.querySelector("#generate");
 
 var upperCase =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var lowerCase =["a","b","c","d","e","f","g","h","i","j","k","l","m","m","o","p","q","r","s","t","u","v","w","x","y","z"];
-var specialCharacters =["!","@","$","%","^","&","*"];
+var specials =["!","@","$","%","^","&","*"];
 var numbers =["1","2","3","4","5","6","7","8","9","0"];
 
 
@@ -15,37 +15,36 @@ var numbers =["1","2","3","4","5","6","7","8","9","0"];
            // b character types 
            // c confirm whether to include lowerCase, uppercase, numeric, and/or special characters
 
-// generate password
-// display the password
-
-
-console.log (alert("A message"));
-
-console.log (prompt("Give me more info"));
-
-console.log (confirm("A yes / A no choice"));
-
-
-// validate input
-
-
-
-
-
-function generatePassword (){
-  var password ="";
-  var characters = [];
-
-
-
-console.log ('generate a password')
-
-
-var passwordLength =10;
+  
+           
+var isMin = 8;
+var isMax = 128;
 var isUpperCase = true;
 var isLowerCase = true;
 var isNumbers = true;
-var isSpecial = true;
+var isSpecials = true;
+
+
+
+console.log (alert("Your password must be between 8 and 128 characters"));
+
+console.log (prompt("How many characters do you want in your password?"));
+
+if( passwordLength < 8 && paswordLength >128){
+  console.log ( alert("Your password must be between 8 and 128 characters"));
+
+}
+
+console.log (confirm("Must have Uppercase letters"));
+console.log (confirm("Must have Lowercase letters"));
+console.log (confirm("Must have Numbers"));
+console.log (confirm("Must have special characters"));
+
+
+// validate input
+if (isMin)
+
+
 
 // creating radomn selectors
 
@@ -53,6 +52,22 @@ var isSpecial = true;
 // let randomValue = lowerCase [Math.floor(Math.random()* lowerCase.lenth)];
 // let randomValue = specialCharacters [Math.floor(Math.random()* specialCharacters.lenth)];
 // let randomValue = numbers [Math.floor(Math.random()* numbers.lenth)];
+
+
+// generate password
+// display the password
+
+
+
+function generatePassword (){
+  var password ="";
+  var characters = [];
+  
+
+
+
+console.log ('generate a password')
+
 
 
 return password;
