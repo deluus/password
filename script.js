@@ -76,19 +76,20 @@ if (!hasUppers && !hasLowers && !hasNumbers && !hasSpecials){
 }
 //  verifying that all criteria was met 
 if (hasUppers){
-  characters.concat(upperCase);
+  
+  characters = characters.concat(upperCase);
 }
 
 if(hasLowers){
-  characters.concat(lowerCase);
+  characters = characters.concat(lowerCase);
 }
 
 if (hasNumbers){
-  characters.concat(numbers);
+  characters = characters.concat(numbers);
 }
 
 if(hasSpecials){
-  characters.concat(specials)
+  characters = characters.concat(specials)
 }
 
 //  where the password is generated
@@ -98,29 +99,6 @@ for (i = 0; i < passwordLength; i ++ ){
 
 }
 return finalVar;
-
-
-
-// creating radomn selectors
-
-// let randomUpper = upperCase [Math.floor(Math.random()* upperCase.lenth)];
-// let randomLower = lowerCase [Math.floor(Math.random()* lowerCase.lenth)];
-// let randomSpecial = specials [Math.floor(Math.random()* specials.lenth)];
-// let randomNumber = numbers [Math.floor(Math.random()* numbers.lenth)];
-
-
-// generate password
-// display the password
-
-
-}
-
-
-console.log ('generate a password'); {
-  
-  
-//   return password;
-// }
 
 function writePassword() {
   var password = generatePassword();
@@ -132,5 +110,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
 
 }
