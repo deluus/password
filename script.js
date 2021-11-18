@@ -26,8 +26,9 @@ var isNumbers = true;
 var isSpecials = true;
 
 
-function generatePassword (password){
-  var password ="";
+function generatePassword (){
+  var finalPassword ="";
+  var finalVar ="";
   var characters = [];
   
 
@@ -35,7 +36,7 @@ function generatePassword (password){
 alert("Your password must be between 8 and 128 characters");
 
 //  ask for desired length of password
-var passwordLength = prompt("Enter your desired password lenght");
+var passwordLength = prompt("Enter your desired password length");
 
 
 
@@ -62,7 +63,7 @@ else if (passwordLength >128){
 }
 
 
-//  user to agree that following characters will be in the password
+//  user to agree that following characters will be in the password and must select one of each
 
 var hasUppers = confirm("Must have Uppercase letters");
 var hasLowers = confirm("Must have Lowercase letters");
@@ -73,7 +74,7 @@ if (!hasUppers && !hasLowers && !hasNumbers && !hasSpecials){
   alert( "please select to meet all criteria")
   
 }
-
+//  verifying that all criteria was met 
 if (hasUppers){
   characters.concat(upperCase);
 }
@@ -90,12 +91,13 @@ if(hasSpecials){
   characters.concat(specials)
 }
 
-
+//  where the password is generated
 for (i = 0; i < passwordLength; i ++ ){
-  var randomIndexValue = characters [Math.floor(Math.random() * characters.lenght)];
-  finalVar  =+ randomIndexValue;
+  var randomIndexValue = characters [Math.floor(Math.random() * characters.length)];
+  finalVar  += randomIndexValue;
 
 }
+return finalVar;
 
 
 
