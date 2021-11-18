@@ -33,19 +33,17 @@ function generatePassword (){
   
 
 //  alert for password length
+
 alert("Your password must be between 8 and 128 characters");
 
 //  ask for desired length of password
+
 var passwordLength = prompt("Enter your desired password length");
 
-
-
-// stores results
-// console.log (result);
-
 // statements to validate criterias are met
+
 // if nothing is entered, user will need to start over
-if (passwordLength == ""){
+if (passwordLength == "") {
 alert ("you must enter a number")
 return "";
 }
@@ -111,5 +109,3 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-}
