@@ -26,58 +26,85 @@ var isNumbers = true;
 var isSpecials = true;
 
 
-function generatePassword (){
+function generatePassword (password){
   var password ="";
   var characters = [];
   
 
 //  alert for password length
-console.log (alert("Your password must be between 8 and 128 characters"));
+alert("Your password must be between 8 and 128 characters");
 
 //  ask for desired length of password
-var result =window.prompt ("How many characters do you want in your password");
+var passwordLength = prompt("Enter your desired password lenght");
+
+
 
 // stores results
-console.log (result);
+// console.log (result);
 
 // statements to validate criterias are met
 // if nothing is entered, user will need to start over
-if (result == ""){
+if (passwordLength == ""){
 alert ("you must enter a number")
 return "";
 }
 
 // if less than 8 is entered, user will start over
-else if(result < 8){
+else if(passwordLength < 8){
   alert ("you entered a number less than 8")
   return ""; 
 }
 
 // if more than 128 is entered, user will start over
-else if (result >128){
-  alert ("you entered a number more thanh 128")
+else if (passwordLength >128){
+  alert ("you entered a number more than 128")
   return "";
 }
 
 
 //  user to agree that following characters will be in the password
 
-console.log (confirm("Must have Uppercase letters"));
-console.log (confirm("Must have Lowercase letters"));
-console.log (confirm("Must have Numbers"));
-console.log (confirm("Must have special characters"));
+var hasUppers = confirm("Must have Uppercase letters");
+var hasLowers = confirm("Must have Lowercase letters");
+var hasNumbers = confirm("Must have Numbers");
+var hasSpecials = confirm("Must have special characters");
+
+if (!hasUppers && !hasLowers && !hasNumbers && !hasSpecials){
+  alert( "please select to meet all criteria")
+  
+}
+
+if (hasUppers){
+  characters.concat(upperCase);
+}
+
+if(hasLowers){
+  characters.concat(lowerCase);
+}
+
+if (hasNumbers){
+  characters.concat(numbers);
+}
+
+if(hasSpecials){
+  characters.concat(specials)
+}
 
 
+for (i = 0; i < passwordLength; i ++ ){
+  var randomIndexValue = characters [Math.floor(Math.random() * characters.lenght)];
+  finalVar  =+ randomIndexValue;
 
+}
 
 
 
 // creating radomn selectors
 
-let randomUpper = upperCase [Math.floor(Math.random()* upperCase.lenth)];
-let randomLower = lowerCase [Math.floor(Math.random()* lowerCase.lenth)];
-let randomSpecial = specials [Math.floor(Math.random()* specials.lenth)];
-let randomNumber = numbers [Math.floor(Math.random()* numbers.lenth)];
+// let randomUpper = upperCase [Math.floor(Math.random()* upperCase.lenth)];
+// let randomLower = lowerCase [Math.floor(Math.random()* lowerCase.lenth)];
+// let randomSpecial = specials [Math.floor(Math.random()* specials.lenth)];
+// let randomNumber = numbers [Math.floor(Math.random()* numbers.lenth)];
 
 
 // generate password
@@ -90,8 +117,8 @@ let randomNumber = numbers [Math.floor(Math.random()* numbers.lenth)];
 console.log ('generate a password'); {
   
   
-  // return password;
-}
+//   return password;
+// }
 
 function writePassword() {
   var password = generatePassword();
@@ -104,4 +131,4 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
+}
