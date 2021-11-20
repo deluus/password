@@ -63,10 +63,10 @@ else if (passwordLength >128){
 
 //  user to agree that following characters will be in the password and must select one of each
 
-var hasUppers = confirm("Must have Uppercase letters");
-var hasLowers = confirm("Must have Lowercase letters");
-var hasNumbers = confirm("Must have Numbers");
-var hasSpecials = confirm("Must have special characters");
+var hasUppers = confirm("Do you want Uppercase letters");
+var hasLowers = confirm("Do you want Lowercase letters");
+var hasNumbers = confirm("Do you want Numbers");
+var hasSpecials = confirm("Do you want special characters");
 
 if (!hasUppers && !hasLowers && !hasNumbers && !hasSpecials){
   alert( "please select to meet all criteria")
